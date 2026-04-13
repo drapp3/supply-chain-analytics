@@ -1,0 +1,364 @@
+{
+  "kpis": {
+    "total_orders": 2500,
+    "delivered": 2049,
+    "delayed": 275,
+    "cancelled": 73,
+    "in_transit": 103,
+    "total_spend": 9221303.0,
+    "on_time_pct": 58.0
+  },
+  "monthly_trend": [
+    {
+      "month": "2024-01",
+      "orders": 141,
+      "spend": 440482.51,
+      "on_time_pct": 58.8
+    },
+    {
+      "month": "2024-02",
+      "orders": 147,
+      "spend": 442640.14,
+      "on_time_pct": 57.7
+    },
+    {
+      "month": "2024-03",
+      "orders": 143,
+      "spend": 449557.98,
+      "on_time_pct": 60.3
+    },
+    {
+      "month": "2024-04",
+      "orders": 132,
+      "spend": 484530.96,
+      "on_time_pct": 61.5
+    },
+    {
+      "month": "2024-05",
+      "orders": 147,
+      "spend": 563522.98,
+      "on_time_pct": 55.2
+    },
+    {
+      "month": "2024-06",
+      "orders": 126,
+      "spend": 493588.24,
+      "on_time_pct": 58.9
+    },
+    {
+      "month": "2024-07",
+      "orders": 131,
+      "spend": 526144.21,
+      "on_time_pct": 59.8
+    },
+    {
+      "month": "2024-08",
+      "orders": 151,
+      "spend": 508470.63,
+      "on_time_pct": 47.9
+    },
+    {
+      "month": "2024-09",
+      "orders": 131,
+      "spend": 565888.72,
+      "on_time_pct": 61.5
+    },
+    {
+      "month": "2024-10",
+      "orders": 148,
+      "spend": 567774.14,
+      "on_time_pct": 60.0
+    },
+    {
+      "month": "2024-11",
+      "orders": 140,
+      "spend": 571412.18,
+      "on_time_pct": 53.2
+    },
+    {
+      "month": "2024-12",
+      "orders": 126,
+      "spend": 463205.33,
+      "on_time_pct": 60.3
+    },
+    {
+      "month": "2025-01",
+      "orders": 153,
+      "spend": 639192.4,
+      "on_time_pct": 56.0
+    },
+    {
+      "month": "2025-02",
+      "orders": 123,
+      "spend": 483814.4,
+      "on_time_pct": 58.0
+    },
+    {
+      "month": "2025-03",
+      "orders": 158,
+      "spend": 526738.95,
+      "on_time_pct": 56.8
+    },
+    {
+      "month": "2025-04",
+      "orders": 123,
+      "spend": 408944.66,
+      "on_time_pct": 54.1
+    },
+    {
+      "month": "2025-05",
+      "orders": 137,
+      "spend": 511709.36,
+      "on_time_pct": 57.3
+    },
+    {
+      "month": "2025-06",
+      "orders": 143,
+      "spend": 573685.21,
+      "on_time_pct": 67.2
+    }
+  ],
+  "suppliers": [
+    {
+      "name": "Apex Electronics",
+      "region": "Asia",
+      "orders": 250,
+      "on_time_pct": 62.1,
+      "avg_lead_days": 8.2,
+      "spend": 1000722.54
+    },
+    {
+      "name": "BrightPath Materials",
+      "region": "North America",
+      "orders": 256,
+      "on_time_pct": 60.6,
+      "avg_lead_days": 5.2,
+      "spend": 933453.23
+    },
+    {
+      "name": "EverGreen Packaging",
+      "region": "North America",
+      "orders": 254,
+      "on_time_pct": 60.0,
+      "avg_lead_days": 4.7,
+      "spend": 972122.3
+    },
+    {
+      "name": "CedarPoint Components",
+      "region": "Europe",
+      "orders": 252,
+      "on_time_pct": 57.7,
+      "avg_lead_days": 11.0,
+      "spend": 950378.64
+    },
+    {
+      "name": "IronBridge Co",
+      "region": "North America",
+      "orders": 250,
+      "on_time_pct": 57.6,
+      "avg_lead_days": 7.0,
+      "spend": 702759.6
+    },
+    {
+      "name": "FutureTech Parts",
+      "region": "Europe",
+      "orders": 256,
+      "on_time_pct": 57.4,
+      "avg_lead_days": 12.6,
+      "spend": 976678.7
+    },
+    {
+      "name": "Highland Materials",
+      "region": "South America",
+      "orders": 229,
+      "on_time_pct": 57.4,
+      "avg_lead_days": 18.3,
+      "spend": 970865.63
+    },
+    {
+      "name": "DeltaWave Supply",
+      "region": "Asia",
+      "orders": 250,
+      "on_time_pct": 56.7,
+      "avg_lead_days": 14.4,
+      "spend": 930770.1
+    },
+    {
+      "name": "JetStream Logistics",
+      "region": "South America",
+      "orders": 246,
+      "on_time_pct": 56.3,
+      "avg_lead_days": 13.3,
+      "spend": 861914.88
+    },
+    {
+      "name": "GlobalSource Inc",
+      "region": "Asia",
+      "orders": 257,
+      "on_time_pct": 53.6,
+      "avg_lead_days": 17.0,
+      "spend": 921637.38
+    }
+  ],
+  "delay_reasons": [
+    {
+      "reason": "Port Congestion",
+      "count": 51,
+      "avg_days_late": 8.8
+    },
+    {
+      "reason": "Weather Disruption",
+      "count": 50,
+      "avg_days_late": 8.7
+    },
+    {
+      "reason": "Customs Delay",
+      "count": 49,
+      "avg_days_late": 8.9
+    },
+    {
+      "reason": "Carrier Issue",
+      "count": 43,
+      "avg_days_late": 8.9
+    },
+    {
+      "reason": "Quality Hold",
+      "count": 41,
+      "avg_days_late": 9.2
+    },
+    {
+      "reason": "Production Backlog",
+      "count": 41,
+      "avg_days_late": 7.8
+    }
+  ],
+  "warehouses": [
+    {
+      "name": "Phoenix DC",
+      "location": "Phoenix, AZ",
+      "capacity": 35000,
+      "stock": 16828,
+      "utilization_pct": 48.1
+    },
+    {
+      "name": "Atlanta DC",
+      "location": "Atlanta, GA",
+      "capacity": 40000,
+      "stock": 14051,
+      "utilization_pct": 35.1
+    },
+    {
+      "name": "Charlotte DC",
+      "location": "Charlotte, NC",
+      "capacity": 50000,
+      "stock": 16230,
+      "utilization_pct": 32.5
+    },
+    {
+      "name": "Chicago DC",
+      "location": "Chicago, IL",
+      "capacity": 60000,
+      "stock": 15153,
+      "utilization_pct": 25.3
+    },
+    {
+      "name": "Dallas DC",
+      "location": "Dallas, TX",
+      "capacity": 45000,
+      "stock": 10966,
+      "utilization_pct": 24.4
+    }
+  ],
+  "categories": [
+    {
+      "category": "Electronics",
+      "orders": 634,
+      "units": 159796,
+      "spend": 4548065.31
+    },
+    {
+      "category": "Raw Materials",
+      "orders": 679,
+      "units": 172352,
+      "spend": 3242347.32
+    },
+    {
+      "category": "Components",
+      "orders": 676,
+      "units": 177952,
+      "spend": 836143.46
+    },
+    {
+      "category": "Packaging",
+      "orders": 511,
+      "units": 128056,
+      "spend": 594746.91
+    }
+  ],
+  "inventory_alerts": [
+    {
+      "product": "Plastic Pellets 1kg",
+      "warehouse": "Atlanta DC",
+      "stock": 243,
+      "reorder_point": 495,
+      "gap": -252,
+      "alert_level": "Critical"
+    },
+    {
+      "product": "Capacitor Set",
+      "warehouse": "Dallas DC",
+      "stock": 111,
+      "reorder_point": 328,
+      "gap": -217,
+      "alert_level": "Critical"
+    },
+    {
+      "product": "Circuit Board A",
+      "warehouse": "Chicago DC",
+      "stock": 169,
+      "reorder_point": 381,
+      "gap": -212,
+      "alert_level": "Critical"
+    },
+    {
+      "product": "Rubber Gasket",
+      "warehouse": "Phoenix DC",
+      "stock": 174,
+      "reorder_point": 337,
+      "gap": -163,
+      "alert_level": "Low"
+    },
+    {
+      "product": "Rubber Gasket",
+      "warehouse": "Dallas DC",
+      "stock": 353,
+      "reorder_point": 466,
+      "gap": -113,
+      "alert_level": "Low"
+    },
+    {
+      "product": "Circuit Board A",
+      "warehouse": "Dallas DC",
+      "stock": 74,
+      "reorder_point": 135,
+      "gap": -61,
+      "alert_level": "Low"
+    },
+    {
+      "product": "Rubber Gasket",
+      "warehouse": "Atlanta DC",
+      "stock": 376,
+      "reorder_point": 417,
+      "gap": -41,
+      "alert_level": "Low"
+    },
+    {
+      "product": "Shrink Film Roll",
+      "warehouse": "Atlanta DC",
+      "stock": 85,
+      "reorder_point": 104,
+      "gap": -19,
+      "alert_level": "Low"
+    }
+  ]
+}

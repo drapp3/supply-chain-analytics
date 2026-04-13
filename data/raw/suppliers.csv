@@ -1,0 +1,11 @@
+supplier_id,name,region,lead_time_days,reliability_score
+1,Apex Electronics,Asia,7,0.91
+2,BrightPath Materials,North America,4,0.95
+3,CedarPoint Components,Europe,9,0.88
+4,DeltaWave Supply,Asia,12,0.82
+5,EverGreen Packaging,North America,3,0.97
+6,FutureTech Parts,Europe,10,0.85
+7,GlobalSource Inc,Asia,14,0.78
+8,Highland Materials,South America,16,0.8
+9,IronBridge Co,North America,5,0.93
+10,JetStream Logistics,South America,11,0.84

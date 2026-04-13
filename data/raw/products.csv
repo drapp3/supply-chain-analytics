@@ -1,0 +1,16 @@
+product_id,name,category,unit_cost,weight_kg
+1,Circuit Board A,Electronics,24.5,0.3
+2,Copper Wire 10m,Raw Materials,8.75,1.2
+3,LED Module,Electronics,12.0,0.1
+4,Steel Plate 1m²,Raw Materials,45.0,8.5
+5,Resistor Pack,Components,3.25,0.05
+6,Capacitor Set,Components,5.5,0.08
+7,Cardboard Box L,Packaging,2.1,0.4
+8,Bubble Wrap 5m,Packaging,4.3,0.6
+9,Sensor Module,Electronics,31.0,0.2
+10,Aluminum Sheet,Raw Materials,18.9,3.0
+11,Connector Kit,Components,7.8,0.12
+12,Shrink Film Roll,Packaging,6.5,1.5
+13,Power Supply Unit,Electronics,42.0,0.9
+14,Rubber Gasket,Components,1.95,0.03
+15,Plastic Pellets 1kg,Raw Materials,3.6,1.0

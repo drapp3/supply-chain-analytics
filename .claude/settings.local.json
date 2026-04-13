@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(sqlite3 --version)",
+      "Bash(npm create:*)",
+      "Bash(npm install:*)",
+      "Bash(python:*)",
+      "Bash(npm run:*)",
+      "Bash(timeout 8 npx vite --host)"
+    ]
+  }
+}
