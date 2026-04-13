@@ -32,7 +32,7 @@ WHERE status = 'Delayed' AND delay_reason != ''
 GROUP BY delay_reason
 ORDER BY count DESC;
 
--- 4. Inventory health — stock vs reorder point
+-- 4. Inventory health - stock vs reorder point
 SELECT
     w.name AS warehouse,
     p.name AS product,
@@ -51,7 +51,7 @@ JOIN warehouses w ON i.warehouse_id = w.warehouse_id
 JOIN products p ON i.product_id = p.product_id
 ORDER BY gap ASC;
 
--- 5. Supplier scorecard — composite metric
+-- 5. Supplier scorecard - composite metric
 SELECT
     s.name,
     s.region,

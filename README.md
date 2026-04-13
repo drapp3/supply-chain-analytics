@@ -1,6 +1,6 @@
 # Supply Chain Analytics
 
-End-to-end supply chain operations dashboard — from synthetic ERP data generation through SQL analytics to an interactive React dashboard. Built to demonstrate data modeling, ETL pipeline design, and analytical visualization.
+End-to-end supply chain operations dashboard covering synthetic ERP data generation, SQL analytics, and an interactive React dashboard. Built to demonstrate data modeling, ETL pipeline design, and analytical visualization.
 
 ## Key Findings
 
@@ -13,7 +13,7 @@ End-to-end supply chain operations dashboard — from synthetic ERP data generat
 ## Architecture
 
 ```
-Raw CSVs ──→ Python ETL ──→ SQLite DB ──→ SQL Analytics ──→ JSON ──→ React Dashboard
+Raw CSVs --> Python ETL --> SQLite DB --> SQL Analytics --> JSON --> React Dashboard
                 │                              │
     generate_data.py              queries.sql (7 queries)
     etl_pipeline.py               schema.sql (5 tables)
@@ -25,7 +25,7 @@ Raw CSVs ──→ Python ETL ──→ SQLite DB ──→ SQL Analytics ──
 |---------------|-----------------------------------|
 | Data Gen      | Python, csv, random               |
 | Database      | SQLite3                           |
-| ETL           | Python (csv → sqlite3 → json)     |
+| ETL           | Python (csv to sqlite3 to json)   |
 | SQL           | Joins, window functions, CTEs     |
 | Frontend      | Vite + React 19, Recharts         |
 | Deployment    | GitHub Pages via gh-pages         |
@@ -34,13 +34,13 @@ Raw CSVs ──→ Python ETL ──→ SQLite DB ──→ SQL Analytics ──
 
 5 normalized tables with foreign key relationships:
 
-- **suppliers** (10 rows) — vendor profiles with reliability scores
-- **warehouses** (5 rows) — US distribution centers with capacity
-- **products** (15 rows) — SKUs across 4 categories
-- **orders** (2,500 rows) — purchase orders with delivery tracking
-- **inventory** (75 rows) — current stock levels per warehouse/product
+- **suppliers** (10 rows) - vendor profiles with reliability scores
+- **warehouses** (5 rows) - US distribution centers with capacity
+- **products** (15 rows) - SKUs across 4 categories
+- **orders** (2,500 rows) - purchase orders with delivery tracking
+- **inventory** (75 rows) - current stock levels per warehouse/product
 
-Example query — supplier scorecard with composite metric:
+Example query - supplier scorecard with composite metric:
 ```sql
 SELECT s.name, s.region,
     ROUND(100.0 * SUM(CASE WHEN o.status='Delivered'
@@ -61,7 +61,7 @@ supply-chain-analytics/
 │   └── raw/                  # Generated CSVs (5 files)
 ├── etl/
 │   ├── generate_data.py      # Synthetic data generation
-│   └── etl_pipeline.py       # Extract → Transform → Load → Export
+│   └── etl_pipeline.py       # Extract, Transform, Load, Export
 ├── sql/
 │   ├── schema.sql            # DDL with indexes and constraints
 │   └── queries.sql           # 7 analytical queries
@@ -100,10 +100,6 @@ The dashboard loads at `http://localhost:5173/supply-chain-analytics/`.
 ## Dashboard
 
 4 tabs: Overview, Suppliers, Inventory, Delays
-
-<!-- Screenshots: replace with actual captures -->
-![Overview](docs/overview.png)
-![Suppliers](docs/suppliers.png)
 
 ## Skills Demonstrated
 
