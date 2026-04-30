@@ -1,46 +1,53 @@
 # Supply Chain Analytics
 
-End-to-end supply chain operations dashboard covering synthetic ERP data generation, SQL analytics, and an interactive React dashboard. Built to demonstrate data modeling, ETL pipeline design, and analytical visualization.
+End-to-end analytics workflow using synthetic supply chain data, Python ETL, SQLite analytics, and a React dashboard.
 
-## Key Findings
+The dataset is generated for the project, so the findings below reflect the generated scenario rather than a real company. The goal was to move data through the full pipeline from raw operational tables to dashboard-ready metrics.
 
-- **58% on-time delivery rate** across 2,500 purchase orders from 10 suppliers spanning Jan 2024–Jun 2025
-- **Port Congestion and Weather Disruption** are the leading delay causes (51 and 50 incidents), averaging 8.8 days late
-- **Electronics dominates spend** at $4.5M (49% of $9.2M total), despite fewer orders than Raw Materials
-- **Warehouse utilization ranges 24–48%**, with Phoenix DC highest at 48.1% and Dallas DC lowest at 24.4%
-- **8 inventory items** currently below reorder point, requiring immediate replenishment action
+## What It Does
+
+- Generates synthetic suppliers, warehouses, products, purchase orders, and inventory records
+- Loads the CSV data into a normalized SQLite database
+- Runs SQL queries for delivery performance, supplier scorecards, inventory health, and delay analysis
+- Exports pre-computed metrics to JSON for the frontend
+- Displays the results in a Vite/React dashboard using Recharts
+
+## Sample Output
+
+- 58% on-time delivery rate across 2,500 generated purchase orders
+- Port congestion and weather disruption are the largest delay categories in the generated data
+- Electronics represents the largest share of generated spend
+- 8 inventory items are below reorder point in the generated inventory snapshot
 
 ## Architecture
 
-```
-Raw CSVs --> Python ETL --> SQLite DB --> SQL Analytics --> JSON --> React Dashboard
-                │                              │
-    generate_data.py              queries.sql (7 queries)
-    etl_pipeline.py               schema.sql (5 tables)
+```text
+Raw CSVs -> Python ETL -> SQLite DB -> SQL Analytics -> JSON -> React Dashboard
 ```
 
 ## Tech Stack
 
-| Layer         | Technology                        |
-|---------------|-----------------------------------|
-| Data Gen      | Python, csv, random               |
-| Database      | SQLite3                           |
-| ETL           | Python (csv to sqlite3 to json)   |
-| SQL           | Joins, window functions, CTEs     |
-| Frontend      | Vite + React 19, Recharts         |
-| Deployment    | GitHub Pages via gh-pages         |
+| Layer | Technology |
+| --- | --- |
+| Data generation | Python, csv, random |
+| Database | SQLite |
+| ETL | Python, sqlite3, JSON export |
+| SQL | Joins, CTEs, CASE expressions, aggregate queries |
+| Frontend | Vite, React, Recharts |
+| Deployment | GitHub Pages |
 
 ## Data Model
 
-5 normalized tables with foreign key relationships:
+The project uses 5 normalized tables with foreign key relationships:
 
-- **suppliers** (10 rows) - vendor profiles with reliability scores
-- **warehouses** (5 rows) - US distribution centers with capacity
-- **products** (15 rows) - SKUs across 4 categories
-- **orders** (2,500 rows) - purchase orders with delivery tracking
-- **inventory** (75 rows) - current stock levels per warehouse/product
+- `suppliers`: vendor profiles with reliability scores
+- `warehouses`: distribution centers with capacity
+- `products`: SKUs across product categories
+- `orders`: purchase orders with delivery tracking
+- `inventory`: stock levels by warehouse and product
 
-Example query - supplier scorecard with composite metric:
+Example supplier scorecard query:
+
 ```sql
 SELECT s.name, s.region,
     ROUND(100.0 * SUM(CASE WHEN o.status='Delivered'
@@ -55,25 +62,19 @@ ORDER BY on_time_pct DESC;
 
 ## Project Structure
 
-```
+```text
 supply-chain-analytics/
-├── data/
-│   └── raw/                  # Generated CSVs (5 files)
+├── data/raw/              # Generated CSV files
 ├── etl/
-│   ├── generate_data.py      # Synthetic data generation
-│   └── etl_pipeline.py       # Extract, Transform, Load, Export
+│   ├── generate_data.py   # Synthetic data generation
+│   └── etl_pipeline.py    # Load, transform, query, and export
 ├── sql/
-│   ├── schema.sql            # DDL with indexes and constraints
-│   └── queries.sql           # 7 analytical queries
+│   ├── schema.sql         # Tables, indexes, and constraints
+│   └── queries.sql        # Analytical queries
 ├── src/
-│   ├── App.jsx               # Dashboard shell with tab navigation
-│   ├── data/metrics.json     # Pre-computed analytics (ETL output)
+│   ├── App.jsx
+│   ├── data/metrics.json
 │   └── components/
-│       ├── KPICards.jsx       # Reusable KPI card grid
-│       ├── TrendChart.jsx     # Monthly area chart with metric toggle
-│       ├── SupplierTable.jsx  # Scorecard table + bar chart
-│       ├── InventoryView.jsx  # Warehouse gauges + reorder alerts
-│       └── DelayAnalysis.jsx  # Delay frequency + avg days late
 ├── index.html
 ├── package.json
 └── vite.config.js
@@ -81,16 +82,11 @@ supply-chain-analytics/
 
 ## How to Run
 
-**Prerequisites:** Python 3.10+, Node.js 18+
+Prerequisites: Python 3.10+ and Node.js 18+
 
 ```bash
-# 1. Generate synthetic data
 python etl/generate_data.py
-
-# 2. Run ETL pipeline (creates SQLite DB + metrics.json)
 python etl/etl_pipeline.py
-
-# 3. Start dashboard
 npm install
 npm run dev
 ```
@@ -99,13 +95,9 @@ The dashboard loads at `http://localhost:5173/supply-chain-analytics/`.
 
 ## Dashboard
 
-4 tabs: Overview, Suppliers, Inventory, Delays
+The dashboard includes four views:
 
-## Skills Demonstrated
-
-- **SQL**: Normalized schema design, JOINs, CASE expressions, window functions, aggregate queries, indexing strategy
-- **Python ETL**: CSV parsing, data validation, SQLite bulk loading, JSON export pipeline
-- **Data Modeling**: Foreign key relationships, constraint design, index optimization
-- **React**: Component composition, state management, data visualization with Recharts
-- **Data Visualization**: KPI cards, area charts, bar charts, gauge indicators, sortable tables
-- **DevOps**: Vite build tooling, GitHub Pages deployment pipeline
+- Overview
+- Suppliers
+- Inventory
+- Delays
