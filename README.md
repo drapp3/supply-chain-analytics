@@ -2,6 +2,8 @@
 
 End-to-end analytics workflow using synthetic supply chain data, Python ETL, SQLite analytics, and a React dashboard.
 
+![Supply Chain Dashboard](dashboard.png)
+
 The dataset is generated for the project, so the findings below reflect the generated scenario rather than a real company. The goal was to move data through the full pipeline from raw operational tables to dashboard-ready metrics.
 
 ## What It Does
